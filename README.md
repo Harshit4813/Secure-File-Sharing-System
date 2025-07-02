@@ -2,10 +2,20 @@
 <hr>
 
 ### Backend Assessment for EZ Works
-This project is a secure file-sharing system implemented as part of the backend engineer assessment for **EZ Works**.
+A secure, production-ready API for encrypted file upload, download, and user management. Designed for **EZ Works** Backend Engineer Assessment, this project ensures data security, content validation, user verification, and token-based file access. 
 You can find the live project at: [TODO](#) (This will be taken down after the assessment)<br>
-It provides an API for secure file upload, download, and management between two types of users: Operation Users and Client Users.
+
 <hr>
+
+ ### Project Overview
+
+This project provides a robust backend solution for securely sharing files between two user types:
+
+Operation Users: Responsible for uploading files to the system
+
+Client Users: Can securely download files shared with them via encrypted links
+
+The platform emphasizes secure file handling, verification through content inspection, and short-lived download links to minimize security risks.
 
 ### Features
 
@@ -13,14 +23,18 @@ It provides an API for secure file upload, download, and management between two 
 - **Framework**: Flask
 - **Database**: MongoDB
 - **Authentication**: JWT (JSON Web Tokens)
+- **Email Service**: SMTP2GO (Email verification)
+- **Security Features**: Encrypted URLs, Expiring Tokens, Password Hashing
 - **File Type Detection**: python-magic
   - The file type is determined not only by the file extension but also by analyzing its contents.
 <hr>
 
 ### Security Considerations
-- File types are verified by content, not just extension
-- Download URLs are encrypted and have a short expiration time
-- User passwords are hashed before storage
+- File types verified by content, preventing extension spoofing
+- Download URLs are encrypted with short expiration times to prevent misuse
+- Passwords stored securely with industry-standard hashing
+- SMTP-based email verification for added account security
+-  Tokens protect both authentication and file access
 <hr>
 
 ### API Endpoints
